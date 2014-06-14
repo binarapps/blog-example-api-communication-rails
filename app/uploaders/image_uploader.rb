@@ -14,10 +14,6 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-  # version :thumb do
-  #   process :resize_to_fit => [200,200]
-  # end
-
   def filename
     if original_filename
       @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
